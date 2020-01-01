@@ -18,7 +18,7 @@
 
 #include <dns/fixedname.h>
 
-#define RRTYPE_ACCOUNT_ATTRIBUTES (0)
+#define RRTYPE_MX_ATTRIBUTES (0)
 
 static bool
 check_account(isc_token_t *token) {
@@ -61,10 +61,10 @@ fromtext_account(ARGS_FROMTEXT) {
 				      false));
 
 	ok = true;
-	if ((options & DNS_RDATA_CHECKACCOUNT) != 0)
+	if ((options & DNS_RDATA_CHECKMX) != 0)
 		ok = check_account(&token);
-	if (!ok && (options & DNS_RDATA_CHECKACCOUNTFAIL) != 0)
-		RETTOK(DNS_R_ACCOUNTISADDRESS);
+	if (!ok && (options & DNS_RDATA_CHECKMXFAIL) != 0)
+		RETTOK(DNS_R_MXISADDRESS);
 	if (!ok && callbacks != NULL)
 		warn_badaccount(&token, lexer, callbacks);
 
