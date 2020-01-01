@@ -9,8 +9,8 @@
  * information regarding copyright ownership.
  */
 
-#ifndef RDATA_GENERIC_ACCOUNT_65634_C
-#define RDATA_GENERIC_ACCOUNT_65634_C
+#ifndef RDATA_GENERIC_ACCOUNT_65534_C
+#define RDATA_GENERIC_ACCOUNT_65534_C
 
 #include <string.h>
 
@@ -334,4 +334,4 @@ casecompare_account(ARGS_COMPARE) {
 	return (compare_account(rdata1, rdata2));
 }
 
-#endif	/* RDATA_GENERIC_ACCOUNT_65634_C */
+#endif	/* RDATA_GENERIC_ACCOUNT_65534_C */

@@ -10,8 +10,8 @@
  */
 
 /* */
-#ifndef GENERIC_ACCOUNT_65634_H
-#define GENERIC_ACCOUNT_65634_H 1
+#ifndef GENERIC_ACCOUNT_65534_H
+#define GENERIC_ACCOUNT_65534_H 1
 
 
 typedef struct dns_rdata_account {
@@ -21,4 +21,4 @@ typedef struct dns_rdata_account {
 	dns_name_t		account;
 } dns_rdata_account_t;
 
-#endif /* GENERIC_ACCOUNT_65634_H */
+#endif /* GENERIC_ACCOUNT_65534_H */
