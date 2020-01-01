@@ -244,9 +244,9 @@ freestruct_account(ARGS_FREESTRUCT) {
 	account->mctx = NULL;
 }
 
-static unsigned char port25_offset[] = { 0, 3 };
-static unsigned char port25_ndata[] = "\003_25\004_tcp";
-static dns_name_t port25 =
+static unsigned char accoutport25_offset[] = { 0, 3 };
+static unsigned char accoutport25_ndata[] = "\003_25\004_tcp";
+static dns_name_t accountport25 =
 	 DNS_NAME_INITNONABSOLUTE(port25_ndata, port25_offset);
 
 static inline isc_result_t
