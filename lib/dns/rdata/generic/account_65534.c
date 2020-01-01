@@ -66,7 +66,7 @@ fromtext_account(ARGS_FROMTEXT) {
 	if (!ok && (options & DNS_RDATA_CHECKMXFAIL) != 0)
 		RETTOK(DNS_R_MXISADDRESS);
 	if (!ok && callbacks != NULL)
-		warn_badaccount(&token, lexer, callbacks);
+		warn_badmx(&token, lexer, callbacks);
 
 	dns_name_init(&name, NULL);
 	buffer_fromregion(&buffer, &token.value.as_region);
