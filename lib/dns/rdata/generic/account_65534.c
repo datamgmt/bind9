@@ -18,7 +18,7 @@
 
 #include <dns/fixedname.h>
 
-#define RRTYPE_MX_ATTRIBUTES (0)
+#define RRTYPE_ACCOUNT_ATTRIBUTES (0)
 
 static bool
 check_account(isc_token_t *token) {
