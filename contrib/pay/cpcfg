@@ -4,4 +4,4 @@ TARGET=/usr/local
 SOURCE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 cd ${SOURCE}/cfgfiles
-cp -R . ${TARGET}
+cp --recursive  --verbose . ${TARGET}
