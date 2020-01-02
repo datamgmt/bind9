@@ -62,7 +62,7 @@ fromtext_pay_account(ARGS_FROMTEXT) {
 
 	ok = true;
 	if ((options & DNS_RDATA_CHECKMX) != 0)
-		ok = check_account(&token);
+		ok = check_pay_account(&token);
 	if (!ok && (options & DNS_RDATA_CHECKMXFAIL) != 0)
 		RETTOK(DNS_R_MXISADDRESS);
 	if (!ok && callbacks != NULL)
@@ -331,7 +331,7 @@ checknames_account(ARGS_CHECKNAMES) {
 
 static inline int
 casecompare_pay_account(ARGS_COMPARE) {
-	return (compare_account(rdata1, rdata2));
+	return (compare_pay_account(rdata1, rdata2));
 }
 
 #endif	/* RDATA_PAY_253_ACCOUNT_65532_C */
