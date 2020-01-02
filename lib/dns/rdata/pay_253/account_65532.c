@@ -9,8 +9,8 @@
  * information regarding copyright ownership.
  */
 
-#ifndef RDATA_PAY_65280_ACCOUNT_65532_C
-#define RDATA_PAY_65280_ACCOUNT_65532_C
+#ifndef RDATA_PAY_253_ACCOUNT_65532_C
+#define RDATA_PAY_253_ACCOUNT_65532_C
 
 #include <string.h>
 
@@ -334,4 +334,4 @@ casecompare_account(ARGS_COMPARE) {
 	return (compare_account(rdata1, rdata2));
 }
 
-#endif	/* RDATA_PAY_65280_ACCOUNT_65532_C */
+#endif	/* RDATA_PAY_253_ACCOUNT_65532_C */
