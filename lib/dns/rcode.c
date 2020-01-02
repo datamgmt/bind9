@@ -523,6 +523,9 @@ dns_rdataclass_fromtext(dns_rdataclass_t *classp, isc_textregion_t *source) {
 	case 'n':
 		COMPARE("none", dns_rdataclass_none);
 		break;
+    case 'p':
+        COMPARE("pay", dns_rdataclass_pay);
+        break;   
 	case 'r':
 		COMPARE("reserved0", dns_rdataclass_reserved0);
 		break;
