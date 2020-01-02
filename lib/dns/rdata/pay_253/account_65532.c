@@ -246,7 +246,7 @@ freestruct_pay_account(ARGS_FREESTRUCT) {
 
 static unsigned char accoutport25_offset[] = { 0, 3 };
 static unsigned char accoutport25_ndata[] = "\003_25\004_tcp";
-static dns_name_t accountport25 =
+static dns_name_t port25 =
 	 DNS_NAME_INITNONABSOLUTE(port25_ndata, port25_offset);
 
 static inline isc_result_t
@@ -309,7 +309,7 @@ checkowner_pay_account(ARGS_CHECKOWNER) {
 }
 
 static inline bool
-checknames_account(ARGS_CHECKNAMES) {
+checknames_pay_account(ARGS_CHECKNAMES) {
 	isc_region_t region;
 	dns_name_t name;
 
