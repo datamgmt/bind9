@@ -244,10 +244,14 @@ freestruct_pay_account(ARGS_FREESTRUCT) {
 	account->mctx = NULL;
 }
 
-static unsigned char accoutport25_offset[] = { 0, 3 };
-static unsigned char accoutport25_ndata[] = "\003_25\004_tcp";
-static dns_name_t port25 =
-	 DNS_NAME_INITNONABSOLUTE(port25_ndata, port25_offset);
+/*
+ * Commented out becuase of re-declaration errors
+ * SendMail port will not be used in account abyway so this will be removed	
+ * static unsigned char port25_offset[] = { 0, 3 };
+ * static unsigned char port25_ndata[] = "\003_25\004_tcp";
+ * static dns_name_t port25 =
+ *	 DNS_NAME_INITNONABSOLUTE(port25_ndata, port25_offset);
+*/
 
 static inline isc_result_t
 additionaldata_pay_account(ARGS_ADDLDATA) {
