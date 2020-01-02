@@ -21,7 +21,7 @@
 #define RRTYPE_ACCOUNT_ATTRIBUTES (0)
 
 static bool
-check_account(isc_token_t *token) {
+check_pay_account(isc_token_t *token) {
 	char tmp[sizeof("xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:123.123.123.123.")];
 	struct in_addr addr;
 	struct in6_addr addr6;
@@ -40,7 +40,7 @@ check_account(isc_token_t *token) {
 }
 
 static inline isc_result_t
-fromtext_account(ARGS_FROMTEXT) {
+fromtext_pay_account(ARGS_FROMTEXT) {
 	isc_token_t token;
 	dns_name_t name;
 	isc_buffer_t buffer;
@@ -84,7 +84,7 @@ fromtext_account(ARGS_FROMTEXT) {
 }
 
 static inline isc_result_t
-totext_account(ARGS_TOTEXT) {
+totext_pay_account(ARGS_TOTEXT) {
 	isc_region_t region;
 	dns_name_t name;
 	dns_name_t prefix;
@@ -112,7 +112,7 @@ totext_account(ARGS_TOTEXT) {
 }
 
 static inline isc_result_t
-fromwire_account(ARGS_FROMWIRE) {
+fromwire_pay_account(ARGS_FROMWIRE) {
 	dns_name_t name;
 	isc_region_t sregion;
 
@@ -134,7 +134,7 @@ fromwire_account(ARGS_FROMWIRE) {
 }
 
 static inline isc_result_t
-towire_account(ARGS_TOWIRE) {
+towire_pay_account(ARGS_TOWIRE) {
 	dns_name_t name;
 	dns_offsets_t offsets;
 	isc_region_t region;
@@ -155,7 +155,7 @@ towire_account(ARGS_TOWIRE) {
 }
 
 static inline int
-compare_account(ARGS_COMPARE) {
+compare_pay_account(ARGS_COMPARE) {
 	dns_name_t name1;
 	dns_name_t name2;
 	isc_region_t region1;
@@ -188,7 +188,7 @@ compare_account(ARGS_COMPARE) {
 }
 
 static inline isc_result_t
-fromstruct_account(ARGS_FROMSTRUCT) {
+fromstruct_pay_account(ARGS_FROMSTRUCT) {
 	dns_rdata_account_t *account = source;
 	isc_region_t region;
 
@@ -206,7 +206,7 @@ fromstruct_account(ARGS_FROMSTRUCT) {
 }
 
 static inline isc_result_t
-tostruct_account(ARGS_TOSTRUCT) {
+tostruct_pay_account(ARGS_TOSTRUCT) {
 	isc_region_t region;
 	dns_rdata_account_t *account = target;
 	dns_name_t name;
@@ -231,7 +231,7 @@ tostruct_account(ARGS_TOSTRUCT) {
 }
 
 static inline void
-freestruct_account(ARGS_FREESTRUCT) {
+freestruct_pay_account(ARGS_FREESTRUCT) {
 	dns_rdata_account_t *account = source;
 
 	REQUIRE(account != NULL);
@@ -250,7 +250,7 @@ static dns_name_t accountport25 =
 	 DNS_NAME_INITNONABSOLUTE(port25_ndata, port25_offset);
 
 static inline isc_result_t
-additionaldata_account(ARGS_ADDLDATA) {
+additionaldata_pay_account(ARGS_ADDLDATA) {
 	isc_result_t result;
 	dns_fixedname_t fixed;
 	dns_name_t name;
@@ -281,7 +281,7 @@ additionaldata_account(ARGS_ADDLDATA) {
 }
 
 static inline isc_result_t
-digest_account(ARGS_DIGEST) {
+digest_pay_account(ARGS_DIGEST) {
 	isc_region_t r1, r2;
 	dns_name_t name;
 
@@ -298,7 +298,7 @@ digest_account(ARGS_DIGEST) {
 }
 
 static inline bool
-checkowner_account(ARGS_CHECKOWNER) {
+checkowner_pay_account(ARGS_CHECKOWNER) {
 
 	REQUIRE(type == dns_rdatatype_account);
 
@@ -330,7 +330,7 @@ checknames_account(ARGS_CHECKNAMES) {
 }
 
 static inline int
-casecompare_account(ARGS_COMPARE) {
+casecompare_pay_account(ARGS_COMPARE) {
 	return (compare_account(rdata1, rdata2));
 }
 
