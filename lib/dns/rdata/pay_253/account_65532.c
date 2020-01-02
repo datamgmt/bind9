@@ -20,6 +20,7 @@
 
 #define RRTYPE_ACCOUNT_ATTRIBUTES (0)
 
+/*
 static bool
 check_pay_account(isc_token_t *token) {
 	char tmp[sizeof("xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:123.123.123.123.")];
@@ -38,6 +39,7 @@ check_pay_account(isc_token_t *token) {
 
 	return (true);
 }
+*/
 
 static inline isc_result_t
 fromtext_pay_account(ARGS_FROMTEXT) {
@@ -62,13 +64,16 @@ fromtext_pay_account(ARGS_FROMTEXT) {
 				      false));
 
 	ok = true;
+	/* Removed as not required for pay
 	if ((options & DNS_RDATA_CHECKMX) != 0)
 		ok = check_pay_account(&token);
+	*/
 	if (!ok && (options & DNS_RDATA_CHECKMXFAIL) != 0)
 		RETTOK(DNS_R_MXISADDRESS);
+	/* Removed as not required for pay
 	if (!ok && callbacks != NULL)
 		warn_badmx(&token, lexer, callbacks);
-
+    */
 	dns_name_init(&name, NULL);
 	buffer_fromregion(&buffer, &token.value.as_region);
 	if (origin == NULL)
