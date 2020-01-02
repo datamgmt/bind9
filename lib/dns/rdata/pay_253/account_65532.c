@@ -168,7 +168,7 @@ compare_pay_account(ARGS_COMPARE) {
 
 	REQUIRE(rdata1->type == rdata2->type);
 	REQUIRE(rdata1->rdclass == rdata2->rdclass);
-    REQUIRE(rdata->rdclass == dns_rdataclass_pay);
+    REQUIRE(rdata1->rdclass == dns_rdataclass_pay);
 	REQUIRE(rdata1->type == dns_rdatatype_account);
 	REQUIRE(rdata1->length != 0);
 	REQUIRE(rdata2->length != 0);
