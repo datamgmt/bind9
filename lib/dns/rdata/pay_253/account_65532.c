@@ -46,6 +46,7 @@ fromtext_pay_account(ARGS_FROMTEXT) {
 	isc_buffer_t buffer;
 	bool ok;
 
+    REQUIRE(rdclass == dns_rdataclass_pay);
 	REQUIRE(type == dns_rdatatype_account);
 
 	UNUSED(type);
@@ -92,6 +93,7 @@ totext_pay_account(ARGS_TOTEXT) {
 	char buf[sizeof("64000")];
 	unsigned short num;
 
+    REQUIRE(rdata->rdclass == dns_rdataclass_pay);
 	REQUIRE(rdata->type == dns_rdatatype_account);
 	REQUIRE(rdata->length != 0);
 
@@ -116,6 +118,7 @@ fromwire_pay_account(ARGS_FROMWIRE) {
 	dns_name_t name;
 	isc_region_t sregion;
 
+    REQUIRE(rdclass == dns_rdataclass_pay);
 	REQUIRE(type == dns_rdatatype_account);
 
 	UNUSED(type);
@@ -139,6 +142,7 @@ towire_pay_account(ARGS_TOWIRE) {
 	dns_offsets_t offsets;
 	isc_region_t region;
 
+    REQUIRE(rdata->rdclass == dns_rdataclass_pay);
 	REQUIRE(rdata->type == dns_rdatatype_account);
 	REQUIRE(rdata->length != 0);
 
@@ -164,6 +168,7 @@ compare_pay_account(ARGS_COMPARE) {
 
 	REQUIRE(rdata1->type == rdata2->type);
 	REQUIRE(rdata1->rdclass == rdata2->rdclass);
+    REQUIRE(rdata->rdclass == dns_rdataclass_pay);
 	REQUIRE(rdata1->type == dns_rdatatype_account);
 	REQUIRE(rdata1->length != 0);
 	REQUIRE(rdata2->length != 0);
@@ -192,6 +197,7 @@ fromstruct_pay_account(ARGS_FROMSTRUCT) {
 	dns_rdata_account_t *account = source;
 	isc_region_t region;
 
+    REQUIRE(rdclass == dns_rdataclass_pay);
 	REQUIRE(type == dns_rdatatype_account);
 	REQUIRE(account != NULL);
 	REQUIRE(account->common.rdtype == type);
@@ -211,6 +217,7 @@ tostruct_pay_account(ARGS_TOSTRUCT) {
 	dns_rdata_account_t *account = target;
 	dns_name_t name;
 
+    REQUIRE(rdata->rdclass == dns_rdataclass_pay);
 	REQUIRE(rdata->type == dns_rdatatype_account);
 	REQUIRE(account != NULL);
 	REQUIRE(rdata->length != 0);
@@ -261,8 +268,9 @@ additionaldata_pay_account(ARGS_ADDLDATA) {
 	dns_offsets_t offsets;
 	isc_region_t region;
 
+    REQUIRE(rdata->rdclass == dns_rdataclass_pay);
 	REQUIRE(rdata->type == dns_rdatatype_account);
-
+	
 	dns_name_init(&name, offsets);
 	dns_rdata_toregion(rdata, &region);
 	isc_region_consume(&region, 2);
@@ -289,6 +297,7 @@ digest_pay_account(ARGS_DIGEST) {
 	isc_region_t r1, r2;
 	dns_name_t name;
 
+    REQUIRE(rdata->rdclass == dns_rdataclass_pay);
 	REQUIRE(rdata->type == dns_rdatatype_account);
 
 	dns_rdata_toregion(rdata, &r1);
@@ -304,7 +313,9 @@ digest_pay_account(ARGS_DIGEST) {
 static inline bool
 checkowner_pay_account(ARGS_CHECKOWNER) {
 
+    REQUIRE(rdclass == dns_rdataclass_pay);
 	REQUIRE(type == dns_rdatatype_account);
+	
 
 	UNUSED(type);
 	UNUSED(rdclass);
@@ -317,6 +328,7 @@ checknames_pay_account(ARGS_CHECKNAMES) {
 	isc_region_t region;
 	dns_name_t name;
 
+    REQUIRE(rdata->rdclass == dns_rdataclass_pay);
 	REQUIRE(rdata->type == dns_rdatatype_account);
 
 	UNUSED(owner);
