@@ -1,0 +1,8 @@
+//
+// Do any local configuration here
+//
+  
+zone "example.com" {
+     type master;
+     file "pay.example.com";
+     };

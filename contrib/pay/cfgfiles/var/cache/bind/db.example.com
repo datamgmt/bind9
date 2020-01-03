@@ -14,14 +14,8 @@ $ORIGIN example.com.
 @       IN      NS      ns1
 ns1     IN      A       192.168.1.81
 
-@       IN      NS      ns2.example.com.
-ns2     IN      A       192.168.1.82
-
 @       IN      MX      10      mail
 mail    IN      A       192.168.1.81
 
 www     IN      A       192.168.1.81
 
-davidw	IN		A		192.168.1.81
-
-;davidw PAY     CR      123456789
