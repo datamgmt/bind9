@@ -32,7 +32,7 @@ typedef struct dns_rdata_account {
 	// pref: unisgned 16 bit int for compatibility with MX format
 	uint16_t		pref;
 	// scheme_name_length: unsignted 8 bit int - valid values 1-16
-	uint8_t			scheme_name_len;
+	uint8_t		scheme_name_len;
 	// scheme_name: ascii string 1-15 chars long
 	pay_scheme_name_t		scheme_name;
 	// account_name_length: unsigned 8-bit int - valid values 1-192
