@@ -1,0 +1,17 @@
+$TTL 1d
+$ORIGIN example.com.
+
+@       PAY     SOA     ns1 root (
+                2019122502      ;serial
+                12h             ;refresh
+                15m             ;retry
+                3w              ;expire
+                2h              ;minimum
+        )
+
+@		NS	ns1
+
+payex   PAY	TXT     "This is a payments record"
+payex   PAY	ACCOUNT 10 iban 339F85069D056503EDAB4F4FC87E144D0140FC53A58A8D801B078578272E4DFF GBP
+payex   PAY     ACCOUNT 20 aba  1120420086CB9A76BFA68904245DEB1DCD3F7B5CEA7D20DE3B38F369F8FF58EB USD
+other   PAY     CNAME   payex.example.com.
