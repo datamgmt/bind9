@@ -12,4 +12,6 @@ $ORIGIN example.com.
 @		NS	ns1
 
 payex   PAY	TXT     "This is a payments record"
-payex   PAY	ACCOUNT 10 payment.bank.com.
+payex   PAY	ACCOUNT 10 iban.gbp.payment.bank.com.
+payex   PAY	ACCOUNT 20 aba.usd.payment.bank.com.
+other   PAY     CNAME   payex.example.com.
